@@ -22,6 +22,7 @@ Follow these steps to get MT4Informer running:
 3. Go to `MQL4/Experts`and drop the `MT4Informer.mq4` file in the that folder.
 5. Restart your MT4 terminal. You should see MT4Informer in the `Navigator` pane under `Expert Advisors`. If it's not there, right-click in the `Navigator` pane and hit `Refresh`.
 6. Create a new chart in your MT4 terminal and attach (drag) the MT4Informer EA to it. 
+7. Add https://api.telegram.org to allowed addresses for WebRequest in the settings of your MT4 terminal.
 
 
 ### Settings
