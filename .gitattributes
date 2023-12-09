@@ -1,2 +1,2 @@
-*.yaml linguist-detectable=true
-*.yaml linguist-language=MQL5
+*.mql linguist-detectable=true
+*.mql linguist-language=MQL5
