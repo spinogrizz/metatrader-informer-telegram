@@ -10,7 +10,7 @@ MT4Informer keeps an eye on your trades and lets you know when:
 2. Your balance goes up by a certain amount (your bot's made some money!).
 3. Your open profit/loss goes over a certain amount.
 
-When any of this happens, MT4Informer will hit you up on Telegram with a message using [@MT4InformerBot](https://t.me/MT4InformerBot) (or your own bot if you compile it youself).
+When any of this happens, MT4Informer will hit you up on Telegram with a message using [@RoboInformerBot](https://t.me/RoboInformerBot) (or your own bot if you compile it youself).
 
 
 ### Installation
@@ -36,12 +36,13 @@ Here are the settings you can tweak:
 | `profit_notify`        | The balance increase (in USD) that triggers a notification |
 | `balance_down_warning` | The negative open profit/loss that triggers a notification |
 | `is_usd_cent`          | Whether your account is in USD cent or USD                 |
+| `nickname`             | Nickname of your advisor/terminal                 |
 
 
 ### How to attach it to your Telegram
 
 If you want to use my Telegram bot to get informed:
 
-1. Send **/start** to [@MT4InformerBot](https://t.me/MT4InformerBot).
+1. Send **/start** to [@RoboInformerBot](https://t.me/RoboInformerBot).
 2. Get your **chat_id** from  [@myidbot](https://t.me/myidbot).
 3. Enter your chat_id to the settings pane of the informer/expert.

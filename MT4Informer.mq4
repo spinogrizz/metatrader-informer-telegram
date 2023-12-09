@@ -1,11 +1,11 @@
 //+------------------------------------------------------------------+
-//|                                                  MT4Informer.mq4 |
+//|                                                     RoboInformer |
 //|                                                    Denis Gryzlov |
 //|                                                                  |
 //+------------------------------------------------------------------+
 #property copyright "Denis Gryzlov"
-#property link      "https://github.com/spinogrizz/mt4-informer-telegram"
-#property version   "1.00"
+#property link      "https://github.com/spinogrizz/metatrader-informer-telegram"
+#property version   "1.05"
 #property strict
 
 
