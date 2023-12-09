@@ -18,7 +18,8 @@ input string chat_id = "";                   // Your personal Telegram chat_id
 input int orders_warning = 10;               // Limit when notify about too many orders taken
 input int profit_notify = 10;                // Notify when balance jumps that many $
 input double balance_down_warning = 500;     // An amount of negative USD on an open P/L to notify about
-input bool is_usd_cent = true;               // Whether account is USD cent or USD.
+input bool is_usd_cent = true;               // Whether account is USD cent or USD
+input string nickname = "";                  // Nickname of your advisor/terminal
 
 // Flags to remember which notifications where already sent
 bool event_orders_sent = false;
@@ -28,7 +29,7 @@ bool event_balance_sent = false;
 double last_balance = 0.0;
 
 int OnInit() {
-   EventSetTimer(60);
+   EventSetTimer(30);
    last_balance = AccountInfoDouble(ACCOUNT_BALANCE);
    
    return(INIT_SUCCEEDED);
@@ -80,6 +81,10 @@ void OnTimer() {
 
 
 void sendTelegramMessage(string text) {
+   if ( nickname != "" ) {
+      text = StringConcatenate(text, " (", nickname, ")");
+   }
+
    string url = StringConcatenate("https://api.telegram.org/bot", bot_token, "/sendMessage"); 
    string data = StringConcatenate("{\"chat_id\": ", chat_id, ", \"text\": \"", text, "\"}");
 
