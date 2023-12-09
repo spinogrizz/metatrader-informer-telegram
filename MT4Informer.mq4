@@ -8,7 +8,6 @@
 #property version   "1.00"
 #property strict
 
-#include <stdlib.mqh>
 
 // Telegram Bot Token
 string bot_token = "...";
@@ -49,7 +48,7 @@ void OnTimer() {
 
     // Event 1: Too many orders taken by a robot
     if (OrdersTotal() >= orders_warning && !event_orders_sent) {
-        resultMessage = StringConcatenate("\\uD83D\\uDCE5 ", OrdersTotal(), " orders taken");
+        resultMessage = StringFormat("\\uD83D\\uDCE5 %d orders taken", OrdersTotal(), " orders taken");
         event_orders_sent = true;
     } else if (event_orders_sent && OrdersTotal() < orders_warning/2) {
         event_orders_sent = false;
@@ -82,11 +81,11 @@ void OnTimer() {
 
 void sendTelegramMessage(string text) {
    if ( nickname != "" ) {
-      text = StringConcatenate(text, " (", nickname, ")");
+      text = StringFormat("%s (%s)", text, nickname);
    }
 
-   string url = StringConcatenate("https://api.telegram.org/bot", bot_token, "/sendMessage"); 
-   string data = StringConcatenate("{\"chat_id\": ", chat_id, ", \"text\": \"", text, "\"}");
+   string url = StringFormat("https://api.telegram.org/bot%s/sendMessage", bot_token); 
+   string data = StringFormat("{\"chat_id\": \"%s\", \"text\": \"%s\"}", chat_id, text);
 
    char post[], result[];
    StringToCharArray(data, post);
